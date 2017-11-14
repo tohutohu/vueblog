@@ -43,6 +43,7 @@
     "top-toast": "^0.0.3",
     "vue": "^2.5.3",
     "vue-i18n": "^7.3.2",
+    "vue-i18n-extensions": "^0.1.0",
     "vue-router": "^2.8.1",
     "vue-server-renderer": "^2.5.3",
     "vuex": "^2.5.0",

@@ -4,15 +4,15 @@
     <div class="admin-content">
       <div class="edit">
         <div class="my-input">
-          <input type="text" v-model="oldPass" placeholder="请输入旧密码">
+          <input type="text" v-model="oldPass" :placeholder="$t('updateAdminPassword.oldPass')">
         </div>
         <div class="my-input">
-          <input type="password" v-model="pass" placeholder="请输入新密码">
+          <input type="password" v-model="pass" :placeholder="$t('updateAdminPassword.pass')">
         </div>
         <div class="my-input">
-          <input type="password" v-model="verifyPass" placeholder="再次输入新密码">
+          <input type="password" v-model="verifyPass" :placeholder="$t('updateAdminPassword.verifyPass')">
         </div>
-        <button type="button" @click="updateAdminPassword">确认修改</button>
+        <button type="button" @click="updateAdminPassword" v-t="'updateAdminPassword.confirm'"></button>
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@ export default {
     // 修改密码
     updateAdminPassword () {
       if (this.pass !== this.verifyPass) {
-        this.$toast('两次密码不一致')
+        this.$toast($t('updateAdminPassword.toastMessage'))
         return
       }
       this.axios.put('/password', {

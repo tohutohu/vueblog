@@ -1,5 +1,5 @@
 const { JSDOM } = require('jsdom')
-const dom = new JSDOM('<!DOCTYPE html></html>', { url: 'http://localhost:8080' })
+const dom = new JSDOM('<!DOCTYPE html></html>', { url: 'https://test.to-hutohu.com' })
 global.window = dom.window
 global.document = window.document
 global.navigator = window.navigator
@@ -17,6 +17,8 @@ const favicon = require('serve-favicon')
 const compression = require('compression')
 const resolve = file => path.resolve(__dirname, file)
 const { createBundleRenderer } = require('vue-server-renderer')
+
+const {directive} = require('vue-i18n-extensions')
 
 const isProd = process.env.NODE_ENV === 'production'
 const useMicroCache = process.env.MICRO_CACHE !== 'false'
@@ -41,7 +43,10 @@ function createRenderer (bundle, options) {
     // this is only needed when vue-server-renderer is npm-linked
     basedir: resolve('./dist'),
     // recommended for performance
-    runInNewContext: true
+    runInNewContext: true,
+    directives: {
+      t: directive
+    }
   }))
 }
 

@@ -5,22 +5,22 @@
       <div class="essay">
         <div class="form">
           <div class="title">
-            <input type="text" v-model="title" placeholder="文章标题" autofocus>
+            <input type="text" v-model="title" :placeholder="$t('publish.articleTitle')" autofocus>
           </div>
           <div class="content">
             <top-editor v-model="content" :upload="upload" :options="options"></top-editor>
           </div>
           <div class="bottom">
             <div class="tag">
-              <input type="text" v-model="tag" placeholder="多个标签以英文逗号分隔">
+              <input type="text" v-model="tag" :placeholder="$t('publish.tagInput')">
             </div>
             <div class="btn">
-              <button type="button" @click="publish">发布</button>
-              <button type="button" @click="draft">存草稿</button>
+              <button type="button" @click="publish" v-t="'publish.publish'"></button>
+              <button type="button" @click="draft" v-t="'publish.draft'"></button>
             </div>
           </div>
           <div class="tags">
-            <span>选择已有标签: </span>
+            <span v-t="'publish.selectTags'"></span>
             <span v-for="(item,index) in tags" :key="index" @click="chooseTag(item)"><a>{{item.tag}}</a></span>
           </div>
         </div>

@@ -1,10 +1,10 @@
 <template>
   <div class="login">
-    <h4 class="title">管理员登录</h4>
+    <h4 class="title" v-t="'login.title'"></h4>
     <div class="form">
-      <input type="text" placeholder="请输入用户名" name="user" v-model="user">
-      <input type="password" placeholder="请输入密码" name="pass" v-model="pass" @keyup.enter="login">
-      <button type="button" @click="login">登录</button>
+      <input type="text" :placeholder="$t('login.user')" name="user" v-model="user">
+      <input type="password" :placeholder="$t('login.pass')" name="pass" v-model="pass" @keyup.enter="login">
+      <button type="button" @click="login" v-t="'login.login'"></button>
     </div>
   </div>
 </template>

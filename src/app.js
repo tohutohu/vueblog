@@ -12,6 +12,7 @@ import cookies from 'js-cookie'
 import TopEditor from 'top-editor'
 import TopToast from 'top-toast'
 import settings from '../settings'
+import i18n from './i18n/i18n.es6.js'
 Vue.use(TopEditor)
 Vue.use(TopToast)
 
@@ -70,6 +71,7 @@ export function createApp () {
   const app = new Vue({
     router,
     store,
+    i18n,
     render: h => h(App)
   })
   return { app, router, store }

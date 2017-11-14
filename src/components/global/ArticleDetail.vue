@@ -3,8 +3,8 @@
     <h3 class="title">{{title}}</h3>
     <top-preview :content="content" :options="options"></top-preview>
     <div class="manage" v-show="isAdmin">
-      <span><a @click="edit">编辑</a></span>
-      <span><a @click="del">删除</a></span>
+      <span><a @click="edit" v-t="'articleDetail.edit'"></a></span>
+      <span><a @click="del" v-t="'articleDetail.delete'"></a></span>
     </div>
   </div>
 </template>

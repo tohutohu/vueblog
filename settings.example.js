@@ -8,6 +8,7 @@ let avatar = 'avatar.jpg'
 let intro = 'Never too old to learn'
 let nickname = 'VueBlog'
 let serverURL = 'https://example.com'
+let lang = 'zh'
 module.exports = {
   dbUrl: 'mongodb://localhost:27017/vueblog',
   user: user,
@@ -15,5 +16,6 @@ module.exports = {
   avatar: avatar,
   intro: intro,
   nickname: nickname,
-  serverURL: serverURL
+  serverURL: serverURL,
+  lang: lang
 }

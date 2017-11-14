@@ -1,6 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const vueConfig = require('./vue-loader.config')
+const vueConfig = require('./vue-loader.config.js')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
@@ -11,8 +11,8 @@ function resolve (dir) {
 }
 
 module.exports = {
-  devtool: isProd ?
-    false : '#cheap-module-source-map',
+  devtool: isProd
+    ? false : '#cheap-module-source-map',
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist/',
@@ -27,7 +27,7 @@ module.exports = {
   module: {
     noParse: /es6-promise\.js$/, // avoid webpack shimming process
     rules: [
-      /*{
+      /* {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
@@ -35,7 +35,7 @@ module.exports = {
         options: {
           formatter: require('eslint-friendly-formatter')
         }
-      },*/ 
+      }, */
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -62,8 +62,8 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: isProd ?
-          ExtractTextPlugin.extract({
+        use: isProd
+          ? ExtractTextPlugin.extract({
             use: 'css-loader?minimize',
             fallback: 'vue-style-loader'
           }) : ['vue-style-loader', 'css-loader']

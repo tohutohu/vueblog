@@ -7,7 +7,7 @@
     <nav class="container nav">
       <ul>
         <li v-for="(item,index) in links" :key="index">
-          <router-link :to="item.path">{{ item.name }}</router-link>
+          <router-link :to="item.path" v-t="item.name"></router-link>
         </li>
       </ul>
       <div class="search">
@@ -22,13 +22,13 @@ export default {
   data () {
     return {
       links: [{
-        name: '首页',
+        name: 'headers.top',
         path: '/'
       }, {
-        name: '新随笔',
+        name: 'headers.publish',
         path: '/publish'
       }, {
-        name: '管理',
+        name: 'headers.admin',
         path: '/admin'
       }],
       searchInfo: ''

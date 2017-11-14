@@ -6,11 +6,11 @@
         <table>
           <thead>
             <tr>
-              <th>标题</th>
-              <th>日期</th>
-              <th>状态</th>
-              <th>操作</th>
-              <th>操作</th>
+              <th v-t="'admin.title'"></th>
+              <th v-t="'admin.date'"></th>
+              <th v-t="'admin.status'"></th>
+              <th v-t="'admin.operation'"></th>
+              <th v-t="'admin.operation'"></th>
             </tr>
           </thead>
           <tbody>
@@ -20,16 +20,16 @@
               </td>
               <td>{{item.date | formatDate('yyyy-MM-dd')}}</td>
               <td :class="{'draft':item.state === 'draft'}">{{item.state | status}}</td>
-              <td><a @click="edit(item)">编辑</a></td>
-              <td><a @click="del(item)">删除</a></td>
+              <td><a @click="edit(item)" v-t="'articleDetail.edit'"></a></td>
+              <td><a @click="del(item)" v-t="'articleDetail.delete'"></a></td>
             </tr>
           </tbody>
         </table>
         <div class="page" v-show="maxPage > 1">
-          <router-link v-if="page > 1" :to="{name:'admin',params:{page:page - 1}}" class="prev">《上一页</router-link>
-          <a v-else class="disabled prev">《上一页</a>
-          <router-link v-if="hasMore" :to="{name:'admin',params:{page:page + 1}}" class="next">下一页》</router-link>
-          <a v-else class="disabled next">下一页》</a>
+          <router-link v-if="page > 1" :to="{name:'admin',params:{page:page - 1}}" class="prev" v-t="'articleList.prevPage'"></router-link>
+          <a v-else class="disabled prev" v-t="'articleList.prevPage'"></a>
+          <router-link v-if="hasMore" :to="{name:'admin',params:{page:page + 1}}" class="next" v-t="'articleList.nextPage'"></router-link>
+          <a v-else class="disabled next" v-t="'articleList.nextPage'"></a>
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@ import AdminAside from '../../components/admin/AdminAside.vue'
 export default {
   name: 'Admin',
   title () {
-    return '管理后台|vueblog'
+    return this.$t('adminPageTitle')
   },
   components: {
     AdminAside

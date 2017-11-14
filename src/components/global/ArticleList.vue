@@ -7,16 +7,16 @@
       </li>
     </ul>
     <div class="tips" v-if="data.length === 0 && this.$route.name === 'search'">
-      <p>没有搜索到和<strong>{{ change }}</strong>相关的文章！</p>
+      <p>{{$t('articleList.relatedArticle')}}<strong>{{ change }}</strong>{{$t('articleList.notFound')}}</p>
     </div>
     <div class="tips" v-if="data.length === 0 && this.$route.name !== 'search'">
-      <p>哇哦，一篇文章都没有!</p>
+      <p v-t="'articleList.noArticle'"></p>
     </div>
     <div class="page" v-show="maxPage > 1">
-      <router-link v-if="page > 1" :to="{name:type,params:{change:change,page:page - 1}}" class="prev">《上一页</router-link>
-      <a v-else class="disabled prev">《上一页</a>
-      <router-link v-if="hasMore" :to="{name:type,params:{change:change,page:page + 1}}" class="next">下一页》</router-link>
-      <a v-else class="disabled next">下一页》</a>
+      <router-link v-if="page > 1" :to="{name:type,params:{change:change,page:page - 1}}" class="prev" v-t="'articleList.prevPage'"></router-link>
+      <a v-else class="disabled prev" v-t="'articleList.prevPage'"></a>
+      <router-link v-if="hasMore" :to="{name:type,params:{change:change,page:page + 1}}" class="next" v-t="'articleList.nextPage'"></router-link>
+      <a v-else class="disabled next" v-t="'articleList.nextPage'"></a>
     </div>
   </div>
 </template>
