@@ -18,7 +18,7 @@ export default {
       article: this.$store.state.articleDetail,
       options: {
         linkify: true,
-        highlight(str, lang) {
+        highlight (str, lang) {
           lang = lang || 'javascript'
           if (hljs.getLanguage(lang)) {
             try {

@@ -94,13 +94,13 @@ const isCacheable = req => useMicroCache
 function render (req, res) {
   const s = Date.now()
 
-  res.setHeader("Content-Type", "text/html")
-  res.setHeader("Server", serverInfo)
+  res.setHeader('Content-Type', 'text/html')
+  res.setHeader('Server', serverInfo)
 
   const handleError = err => {
     if (err.url) {
       res.redirect(err.url)
-    } else if(err.code === 404) {
+    } else if (err.code === 404) {
       res.status(404).end('404 | Page Not Found')
     } else {
       // Render Error Page or Redirect
@@ -141,7 +141,7 @@ function render (req, res) {
 }
 
 // client http intercept
-app.get('/login', function(req, res, next) {
+app.get('/login', function (req, res, next) {
   if (req.cookies.token) {
     res.redirect('/')
   } else {
@@ -150,7 +150,7 @@ app.get('/login', function(req, res, next) {
 })
 
 // server http intercept
-app.get(['/admin', '/admin/*', '/publish', '/publish/*', '/updateAdminPassword', '/updateAdminInfo'], function(req, res, next) {
+app.get(['/admin', '/admin/*', '/publish', '/publish/*', '/updateAdminPassword', '/updateAdminInfo'], function (req, res, next) {
   if (req.cookies.token) {
     next()
   } else {
@@ -189,7 +189,7 @@ app.get('/api/articles', router.articles)
 app.post('/api/article', hasToken, router.article)
 
 // administrator login
-app.post('/api/login',router.login)
+app.post('/api/login', router.login)
 
 // administrator logout
 app.post('/api/logout', router.logout)

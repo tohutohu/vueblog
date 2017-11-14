@@ -46,7 +46,7 @@ function article (id) {
 
 /* ============================= */
 
-// 首页 
+// 首页
 function indexPage (id) {
   return axios.all([posts(id), administrator(), tags(), archives()])
 }

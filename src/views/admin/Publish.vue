@@ -45,7 +45,7 @@ export default {
       },
       options: {
         linkify: true,
-        highlight(str, lang) {
+        highlight (str, lang) {
           lang = lang || 'javascript'
           if (hljs.getLanguage(lang)) {
             try {
