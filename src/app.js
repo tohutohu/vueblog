@@ -11,6 +11,7 @@ import cookies from 'js-cookie'
 // https://github.com/vuetop/top-editor
 import TopEditor from 'top-editor'
 import TopToast from 'top-toast'
+import settings from '../settings'
 Vue.use(TopEditor)
 Vue.use(TopToast)
 
@@ -27,7 +28,7 @@ const router = createRouter()
 sync(store, router)
 axios.defaults.timeout = 5000
 // console.log(`${location.protocol}//${location.host}/api` )
-const baseURL = 'http://localhost:8080/api'
+const baseURL = settings.serverURL + '/api'
 
 axios.defaults.baseURL = baseURL
 
