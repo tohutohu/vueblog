@@ -41,7 +41,7 @@ export default {
       date: '',
       articleID: this.$route.params.id,
       upload: {
-        url: 'http://localhost:8080/api/upload'
+        url: this.baseURL
       },
       options: {
         linkify: true,
@@ -74,11 +74,11 @@ export default {
     // 发布文章
     publish () {
       if (!this.title) {
-        this.$toast('文章标题不能为空！')
+        this.$toast(this.$t('publish.emptyTitle'))
         return
       }
       if (!this.content) {
-        this.$toast('文章正文不能为空！')
+        this.$toast(this.$t('publish.emptyBody'))
         return
       }
 

@@ -36,7 +36,9 @@ module.exports = {
     draft: '下書きを保存する',
     selectTags: 'タグ: ',
     tagInput: ',区切りでタグを入力',
-    articleTitle: 'タイトル'
+    articleTitle: 'タイトル',
+    emptyTitle: 'タイトルは空にできません！',
+    emptyBody: '本文は空にできません！'
   },
   updateAdminInfo: {
     update: '更新',

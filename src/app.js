@@ -72,7 +72,12 @@ export function createApp () {
     router,
     store,
     i18n,
-    render: h => h(App)
+    render: h => h(App),
+    data: function () {
+      return {
+        baseURL
+      }
+    }
   })
   return { app, router, store }
 }

@@ -36,7 +36,9 @@ module.exports = {
     draft: '存草稿',
     selectTags: '选择已有标签: ',
     tagInput: '多个标签以英文逗号分隔',
-    articleTitle: '文章标题'
+    articleTitle: '文章标题',
+    emptyTitle: '文章标题不能为空！',
+    emptyBody: '文章正文不能为空！'
   },
   updateAdminInfo: {
     update: '更改',
