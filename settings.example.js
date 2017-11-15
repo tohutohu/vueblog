@@ -8,7 +8,7 @@ let avatar = 'avatar.jpg'
 let intro = 'Never too old to learn'
 let nickname = 'VueBlog'
 let serverURL = 'https://example.com'
-let lang = 'zh'
+let lang = 'ja'
 let googleAnalytics = ''
 module.exports = {
   dbUrl: 'mongodb://localhost:27017/vueblog',

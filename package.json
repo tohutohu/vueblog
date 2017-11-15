@@ -1,8 +1,8 @@
 {
-  "name": "VueBlog",
-  "version": "1.2.1",
-  "description": "A vuejs and nodejs project",
-  "author": "qq22337383@gmail.com",
+  "name": "Vue-Blog",
+  "version": "1.0.0",
+  "description": "Blog service with Vue.js and Node.js",
+  "author": "tohu.soy@gmail.com",
   "license": "GPL-3.0",
   "private": true,
   "scripts": {
