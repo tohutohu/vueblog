@@ -1,5 +1,6 @@
 <template>
   <aside class="aside">
+    <my-profile />
     <div class="tags">
       <div class="title" v-t="'myAside.tags'"></div>
       <div class="list">
@@ -23,6 +24,7 @@
   </aside>
 </template>
 <script>
+import Profile from './Profile.vue'
 export default {
   name: 'MyAside',
   computed: {
@@ -32,6 +34,9 @@ export default {
     archives () {
       return this.$store.state.archives
     }
+  },
+  components: {
+    'my-profile': Profile
   }
 }
 </script>

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Meta from 'vue-meta'
 import { Article, List, Admin } from '../views/CreateListView'
 const Login = () =>
   import('../views/Login.vue')
@@ -12,7 +13,10 @@ const UpdateAdminInfo = () =>
 
 const UpdateAdminPassword = () =>
   import('../views/admin/UpdateAdminPassword.vue')
+
 Vue.use(Router)
+Vue.use(Meta)
+
 export function createRouter () {
   return new Router({
     mode: 'history',

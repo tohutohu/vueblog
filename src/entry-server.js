@@ -11,6 +11,7 @@ export default context => {
   return new Promise((resolve, reject) => {
     const s = isDev && Date.now()
     const { app, router, store } = createApp()
+    const meta = app.$meta()
     if (context.cookies) {
       store.state.cookies = context.cookies
     }
@@ -24,6 +25,7 @@ export default context => {
 
     // set router's location
     router.push(url)
+    context.meta = meta
 
     // wait until router has resolved possible async hooks
     router.onReady(() => {
