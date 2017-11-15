@@ -28,7 +28,7 @@ import AdminAside from '../../components/admin/AdminAside.vue'
 export default {
   name: 'UpdateAdminInfo',
   title () {
-    return '管理后台|vueblog'
+    return this.$t('adminPageTitle')
   },
   data () {
     return {

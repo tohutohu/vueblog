@@ -32,7 +32,7 @@ export default {
     // 修改密码
     updateAdminPassword () {
       if (this.pass !== this.verifyPass) {
-        this.$toast($t('updateAdminPassword.toastMessage'))
+        this.$toast(this.$t('updateAdminPassword.toastMessage'))
         return
       }
       this.axios.put('/password', {

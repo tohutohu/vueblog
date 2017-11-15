@@ -41,7 +41,7 @@ export default {
       date: '',
       articleID: this.$route.params.id,
       upload: {
-        url: this.baseURL
+        url: '/api/upload'
       },
       options: {
         linkify: true,

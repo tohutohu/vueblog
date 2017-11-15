@@ -7,3 +7,4 @@ note.md
 npm-debug.log
 *.iml
 settings.js
+public/pictures/*

@@ -27,6 +27,7 @@ const serverInfo =
   `vue-server-renderer/${require('vue-server-renderer/package.json').version}`
 
 const app = express()
+app.enable('trust proxy')
 app.use(cookieParser())
 
 const template = fs.readFileSync(resolve('./src/index.template.html'), 'utf-8')

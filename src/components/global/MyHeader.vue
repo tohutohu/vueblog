@@ -9,6 +9,9 @@
         <li v-for="(item,index) in links" :key="index">
           <router-link :to="item.path" v-t="item.name"></router-link>
         </li>
+        <li v-for="(item,index) in adminLinks" v-if="isAdmin" :key="index">
+          <router-link :to="item.path" v-t="item.name"></router-link>
+        </li>
       </ul>
       <div class="search">
         <input type="search" name="search" placeholder="search" v-model="searchInfo" autofocus @keyup.enter="search">
@@ -17,6 +20,7 @@
   </header>
 </template>
 <script>
+import cookies from 'js-cookie'
 export default {
   name: 'MyHeader',
   data () {
@@ -24,7 +28,8 @@ export default {
       links: [{
         name: 'headers.top',
         path: '/'
-      }, {
+      }],
+      adminLinks: [{
         name: 'headers.publish',
         path: '/publish'
       }, {
@@ -37,6 +42,9 @@ export default {
   computed: {
     administrator () {
       return this.$store.state.administrator
+    },
+    isAdmin () {
+      return !!((cookies.get('token') || this.$store.state.cookies.token))
     }
   },
   methods: {
