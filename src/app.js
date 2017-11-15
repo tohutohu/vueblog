@@ -13,6 +13,9 @@ import TopEditor from 'top-editor'
 import TopToast from 'top-toast'
 import settings from '../settings'
 import i18n from './i18n/i18n.es6.js'
+
+import VueAnalytics from 'vue-analytics'
+
 Vue.use(TopEditor)
 Vue.use(TopToast)
 
@@ -25,6 +28,13 @@ Object.keys(filters).forEach(key => {
 
 const store = createStore()
 const router = createRouter()
+
+if (settings.googleAnalytics !== '') {
+  Vue.use(VueAnalytics, {
+    id: settings.googleAnalytics,
+    router
+  })
+}
 
 sync(store, router)
 axios.defaults.timeout = 5000
@@ -72,12 +82,7 @@ export function createApp () {
     router,
     store,
     i18n,
-    render: h => h(App),
-    data: function () {
-      return {
-        baseURL
-      }
-    }
+    render: h => h(App)
   })
   return { app, router, store }
 }

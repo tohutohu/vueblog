@@ -9,6 +9,7 @@ let intro = 'Never too old to learn'
 let nickname = 'VueBlog'
 let serverURL = 'https://example.com'
 let lang = 'zh'
+let googleAnalytics = ''
 module.exports = {
   dbUrl: 'mongodb://localhost:27017/vueblog',
   user: user,
@@ -17,5 +18,6 @@ module.exports = {
   intro: intro,
   nickname: nickname,
   serverURL: serverURL,
-  lang: lang
+  lang: lang,
+  googleAnalytics: googleAnalytics
 }
